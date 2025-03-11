@@ -32,6 +32,7 @@ public class ClientService {
     public Client update(Long id, ClientRepresentatioDTO.Update representation) {
         Client existingClient = clientRepository.findById(id)
                 .orElseThrow(() -> new ClientRequestException("Cliente não encontrado."));
+        //fazer o update
         return clientRepository.save(existingClient);
     }
 
